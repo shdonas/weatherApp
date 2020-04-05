@@ -74,7 +74,7 @@ https://dasamith.github.io/homework5/
 
 ## API Reference
 
-https://momentjs.com/
+https://openweathermap.org/
 
 ## Tests
 project still in development phase

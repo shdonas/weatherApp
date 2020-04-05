@@ -34,12 +34,14 @@ function loadData(city) {
             var weather = data.weather[0].main;
             var temp = data.main.temp + "F";
             var feelsLike = "Feels Like: " + data.main.feels_like;
+            var hum = "humidity: " + data.main.humidity;
 
             $('.location0').html(location);
             $('.icon0').attr('src', icon);
             $('.weather0').html(weather);
             $(".temp0").html("Temperature: " + temp);
             $('.feelsLike0').html(feelsLike);
+            $('.humidity').html(hum);
         })
 
     $.getJSON(API_forecast,

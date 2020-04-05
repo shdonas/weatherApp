@@ -4,9 +4,16 @@ if (btnSearch) {
     btnSearch.addEventListener('click', function () {
 
         var cityName = document.getElementById('userInput').value;
-        document.getElementById("save0").innerHTML = cityName;
+        // document.getElementById("save").innerHTML = cityName;
         console.log(cityName);
+
         loadData(cityName);
+        store(cityName);
+        console.log(items);
+
+        // displayStorage();
+        displaySearch(cityName);
+
 
         document.getElementById("userInput").value = "";
     });
@@ -31,7 +38,7 @@ function loadData(city) {
             $('.location0').html(location);
             $('.icon0').attr('src', icon);
             $('.weather0').html(weather);
-            $(".temp0").html(temp);
+            $(".temp0").html("Temperature: " + temp);
             $('.feelsLike0').html(feelsLike);
         })
 
@@ -62,4 +69,28 @@ function loadData(city) {
 
         })
 
+}
+
+
+var items = [];
+var saveSearch = document.getElementById("saveSearch");
+
+function store(cityName) {
+    items.push(cityName);
+    localStorage.setItem("item", items);
+}
+
+function displayStorage() {
+    for (var i = 0; i < items.length; i++) {
+
+        var newSearch = document.createElement("p");
+        newSearch.textContent = items[i];
+        saveSearch.appendChild(newSearch);
+    }
+}
+
+function displaySearch(cityName) {
+    var newSearch = document.createElement("p");
+    newSearch.textContent = cityName;
+    saveSearch.appendChild(newSearch);
 }

@@ -70,7 +70,7 @@ https://dasamith.github.io/homework5/
 
 ## Screenshot
 
-![Screenshot](image/Cupture.JPG)
+![Screenshot](image/Capture.JPG)
 
 ## API Reference
 

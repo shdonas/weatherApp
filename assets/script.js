@@ -59,7 +59,7 @@ function loadData(city) {
                 var temp1 = data.list[value].main.temp + "F";
                 var feelsLike1 = "Feels Like: " + data.list[value].main.feels_like;
 
-                $('.date' + i).html(formatDate1.toDateString());
+                $('.date' + i).html(formatDate1.toLocaleDateString());
                 $('.icon' + i).attr('src', icon1);
                 $('.weather' + i).html(weather1);
                 $(".temp" + i).html(temp1);
@@ -94,5 +94,9 @@ function displayStorage() {
 function displaySearch(cityName) {
     var newSearch = document.createElement("p");
     newSearch.textContent = cityName;
+    newSearch.onclick = function(){
+        loadData(cityName);
+    }
     saveSearch.appendChild(newSearch);
+    
 }

@@ -2,10 +2,13 @@ var btnSearch = document.getElementById("btnSearch");
 
 if (btnSearch) {
     btnSearch.addEventListener('click', function () {
+
         var cityName = document.getElementById('userInput').value;
         document.getElementById("save0").innerHTML = cityName;
         console.log(cityName);
         loadData(cityName);
+
+        document.getElementById("userInput").value = "";
     });
 }
 
@@ -25,30 +28,38 @@ function loadData(city) {
             var temp = data.main.temp + "F";
             var feelsLike = "Feels Like: " + data.main.feels_like;
 
-            $('.location').append(location);
-            $('.icon').attr('src', icon);
-            $('.weather').append(weather);
-            $(".temp").append(temp);
-            $('.feelsLike').append(feelsLike);
+            $('.location0').html(location);
+            $('.icon0').attr('src', icon);
+            $('.weather0').html(weather);
+            $(".temp0").html(temp);
+            $('.feelsLike0').html(feelsLike);
         })
 
     $.getJSON(API_forecast,
         function (data) {
             console.log(data);
+            var value = 2;
 
-            var date = data.list[0].dt_txt;
-            var formatDate = new Date(date);
+            for (i = 1; i <= 5; i++) {
 
-            // var icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-            var weather = data.list[0].weather.main;
-            var temp = data.list[0].main.temp + "F";
-            var feelsLike = "Feels Like: " + data.list[0].main.feels_like;
+                var date1 = data.list[value].dt_txt;
+                var formatDate1 = new Date(date1);
 
-            $('.date1').append(formatDate.getDay());
-            // $('.icon').attr('src', icon);
-            $('.weather').append(weather);
-            $(".temp").append(temp);
-            $('.feelsLike').append(feelsLike);
+                var icon1 = "http://openweathermap.org/img/w/" + data.list[value].weather[0].icon + ".png";
+                var weather1 = data.list[value].weather[0].main;
+                var temp1 = data.list[value].main.temp + "F";
+                var feelsLike1 = "Feels Like: " + data.list[value].main.feels_like;
+
+                $('.date' + i).html(formatDate1.toDateString());
+                $('.icon' + i).attr('src', icon1);
+                $('.weather' + i).html(weather1);
+                $(".temp" + i).html(temp1);
+                $('.feelsLike' + i).html(feelsLike1);
+
+                value += 8;
+
+            }
 
         })
+
 }

@@ -1,13 +1,6 @@
-## homework5
 ## Weather App
 
-
-
-
-
 ## Acceptance Criteria
-
-
 
 ## Build status
 project still in development phase
@@ -23,7 +16,6 @@ tools: (to be used):
 ## Code style
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
 
 ## Tech/framework used
     node.js
@@ -48,8 +40,6 @@ tools: (to be used):
 
 ## Installation
 
-
-
 ## Screenshot
 
 ![Screenshot](image/Capture.JPG)
@@ -67,10 +57,10 @@ project still in development phase
 Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
 
 ## Credits
-upenn coding bootcamp
+
 
 
 ## License
 A short snippet describing the license (MIT, Apache etc)
 
-MIT © [Amith Das]()
+MIT © [Shakhawat Hossain]()
